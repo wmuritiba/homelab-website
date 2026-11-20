@@ -1,0 +1,56 @@
+# Operating system and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+.cache/
+
+# Tooling and build output
+node_modules/
+dist/
+build/
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+
+# Local preview helpers
+_site/
+
+# Provisional publication (W4A): only /docs and .gitignore are published.
+# Remove or relax these rules only when the definitive website is approved.
+/assets/
+/about/
+/inbox-zero/
+/marvin/
+/projects/
+/documentation/
+/scripts/
+/index.html
+/404.html
+/styles.css
+/script.js
+/favicon.svg
+/CNAME
+/.nojekyll
+/robots.txt
+/sitemap.xml
+/README.md
+/AGENTS.md

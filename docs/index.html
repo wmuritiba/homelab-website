@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muritiba Homelab — Infrastructure & Automation</title>
+  <meta name="description" content="A provisional public page for Muritiba Homelab. The complete website is being prepared.">
+  <meta name="theme-color" content="#06090f">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Muritiba Homelab">
+  <meta property="og:title" content="Muritiba Homelab — Infrastructure & Automation">
+  <meta property="og:description" content="A provisional public page for the Muritiba Homelab.">
+  <meta property="og:url" content="https://homelab.wmuritiba.com/">
+  <meta property="og:locale" content="en_AU">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06090f;
+      --surface: #0c141f;
+      --border: rgba(148, 163, 184, 0.16);
+      --text: #e9eff8;
+      --muted: #98a7bb;
+      --faint: #6e7f95;
+      --accent: #5eead4;
+      --accent-strong: #2dd4bf;
+      --blue: #7dd3fc;
+      --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(900px 520px at 12% -8%, rgba(45, 212, 191, 0.1), transparent 62%),
+        radial-gradient(760px 460px at 92% 2%, rgba(56, 132, 255, 0.09), transparent 60%);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, #000 25%, transparent 78%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, #000 25%, transparent 78%);
+    }
+
+    .container {
+      width: min(100% - 40px, 1160px);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 550;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.13);
+    }
+
+    .lead {
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1.12rem;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 0.94rem;
+      font-weight: 620;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button--primary {
+      background: var(--accent);
+      color: #042f2e;
+    }
+
+    .button--primary:hover {
+      background: #8df5e5;
+      color: #042f2e;
+    }
+
+    .button--ghost {
+      border-color: rgba(148, 163, 184, 0.26);
+      background: rgba(148, 163, 184, 0.04);
+      color: var(--text);
+    }
+
+    .button--ghost:hover {
+      border-color: rgba(94, 234, 212, 0.45);
+      background: rgba(94, 234, 212, 0.07);
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 650;
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
+    }
+
+    .hero h1 .accent {
+      background: linear-gradient(100deg, var(--accent) 5%, var(--blue) 85%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero .lead {
+      margin: 24px 0 0;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .panel {
+      margin-top: 34px;
+      padding: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 16px;
+      background: linear-gradient(160deg, rgba(16, 26, 41, 0.9), rgba(8, 13, 21, 0.9));
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+      font-weight: 620;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .panel p + p {
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 72px;
+      padding: 28px 0 32px;
+      border-top: 1px solid rgba(148, 163, 184, 0.14);
+      color: var(--faint);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.02em;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer p + p {
+      margin-top: 6px;
+    }
+
+    .mark {
+      width: 34px;
+      height: 34px;
+    }
+  </style>
+</head>
+<body>
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Muritiba Homelab · New South Wales, Australia</p>
+        <h1>Muritiba Homelab — <span class="accent">Infrastructure &amp; Automation</span></h1>
+        <p class="lead">The complete website is being prepared. This provisional page is published so the domain, HTTPS and GitHub Pages configuration can be validated before the final content is released.</p>
+        <div class="button-row">
+          <a class="button button--primary" href="https://github.com/wmuritiba" rel="noopener">
+            GitHub profile
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M14 4h6v6M20 4l-9 9M10 5H5v14h14v-5"/>
+            </svg>
+          </a>
+        </div>
+        <div class="panel">
+          <h2>Provisional status</h2>
+          <p>The full website covers infrastructure, networking, cloud, automation and applied-AI projects. It includes project overviews, privacy policies and terms of service, which are being reviewed before publication.</p>
+          <p>The final pages are not published from this directory. This page is intentionally minimal and sets no cookies, analytics or third-party scripts.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Muritiba Homelab. Operated privately in New South Wales, Australia.</p>
+      <p>This provisional page is static and sets no cookies, analytics or third-party scripts.</p>
+    </div>
+  </footer>
+</body>
+</html>
