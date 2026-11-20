@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Inbox Zero Privacy Policy | Muritiba Homelab</title>
+  <meta name="description" content="How the private, self-hosted Inbox Zero deployment accesses, uses, stores and shares Gmail data and profile information.">
+  <link rel="canonical" href="https://homelab.wmuritiba.com/inbox-zero/privacy/">
+  <meta name="theme-color" content="#06090f">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Muritiba Homelab">
+  <meta property="og:title" content="Inbox Zero Privacy Policy">
+  <meta property="og:description" content="How the private, self-hosted Inbox Zero deployment accesses, uses, stores and shares Gmail data and profile information.">
+  <meta property="og:url" content="https://homelab.wmuritiba.com/inbox-zero/privacy/">
+  <meta property="og:locale" content="en_AU">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../../" aria-label="Muritiba Homelab — home">
+        <img class="brand-mark" src="../../assets/mark.svg" alt="" width="34" height="34">
+        <span class="brand-text">Muritiba <span>Homelab</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="../../projects/">Projects</a>
+        <a href="../../about/">About</a>
+        <a href="../../marvin/">Marvin</a>
+        <a href="../../inbox-zero/" aria-current="true">Inbox Zero</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="policy-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../../">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../">Inbox Zero</a>
+          <span aria-hidden="true">/</span>
+          <span>Privacy policy</span>
+        </nav>
+        <p class="eyebrow">Inbox Zero · Privacy</p>
+        <h1>Privacy Policy</h1>
+        <p class="lead">How this private, self-hosted Inbox Zero deployment accesses, uses, stores and shares Gmail data and Google profile information.</p>
+        <div class="policy-meta">
+          <span>Last updated: <time datetime="2026-11-20">20 November 2026</time></span>
+          <span>Version 1.0</span>
+          <span>Applies to: Inbox Zero (self-hosted)</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="container policy-layout">
+      <aside class="policy-toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#about">About this policy</a></li>
+          <li><a href="#access">Who can use it</a></li>
+          <li><a href="#google-data">Google data we access</a></li>
+          <li><a href="#use">How we use data</a></li>
+          <li><a href="#ai">AI providers and third parties</a></li>
+          <li><a href="#storage">Storage, security and retention</a></li>
+          <li><a href="#sharing">Sharing and disclosure</a></li>
+          <li><a href="#limited-use">Google Limited Use</a></li>
+          <li><a href="#rights">Your choices and rights</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes to this policy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </aside>
+
+      <article class="policy-body">
+        <div class="policy-summary">
+          <h2>The short version</h2>
+          <p>This is an independent, self-hosted deployment of the open-source Inbox Zero app (v2.30.0). It requests broad Gmail OAuth scopes; The features currently enabled are narrower than the granted permissions. Anthropic Claude Haiku is the active AI provider, with Groq described as a possible fallback. Data is described as stored in local PostgreSQL and Redis; retention, backups, redaction and security controls are not verified here.</p>
+          <p>The documentation states that sending, deletion and bulk cleanup are disabled. These settings and the intended commitments not to sell Google user data, use it for advertising or train models require verification. This policy describes the intended deployment, not the upstream hosted Inbox Zero service.</p>
+        </div>
+
+        <section class="policy-section" id="about">
+          <h2>1. About this policy</h2>
+          <p>Inbox Zero is open-source email software. This policy applies to a private, self-hosted deployment operated as part of the Muritiba Homelab. In this policy, “we”, “us” and “our” refer to the operator of <a href="https://wmuritiba.com">wmuritiba.com</a> who runs the deployment. “Inbox Zero” refers to this self-hosted instance.</p>
+          <p>This deployment is independent. It is not operated by, endorsed by or affiliated with the upstream Inbox Zero project or its maintainers, Google, Anthropic or Groq. If you use the upstream hosted service at getinboxzero.com, that provider’s terms and privacy policy apply instead.</p>
+          <p>This policy applies to personal information and Google user data handled by this deployment. It does not apply to this static website, which sets no cookies and runs no analytics. It also does not apply to Google, Anthropic, Groq or any other third-party service.</p>
+          <div class="policy-contact">
+            <p><strong>Operator:</strong> Muritiba Homelab is an independent personal technology project operated by WELBERT BORGES MURITIBA, based in New South Wales, Australia.</p>
+            <p><strong>Privacy contact:</strong> <a href="mailto:beto.com2@gmail.com">beto.com2@gmail.com</a></p>
+          </div>
+        </section>
+
+        <section class="policy-section" id="access">
+          <h2>2. Who can use it</h2>
+          <p>The deployment documentation describes a private interface with a local bind and an SSH tunnel, limited to configured accounts. The bind address, tunnel, account allowlist and exposure of the service are not documented here.</p>
+          <p>The deployment is not directed to children under 13 and is not offered as a public email service. It is not an emergency service or a substitute for professional advice.</p>
+        </section>
+
+        <section class="policy-section" id="google-data">
+          <h2>3. Google data we access</h2>
+          <p>The operator connects Gmail accounts to the self-hosted app using Google OAuth. The scopes below are the ones documented for this deployment. They are intended to provide the email-organisation features described in this draft, not to build advertising profiles or to sell data.</p>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Scope or API</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Why it is accessed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>userinfo.profile</code><br><code>userinfo.email</code><br>Google People API</td>
+                  <td>Name, primary email address and profile picture associated with the Google Account.</td>
+                  <td>To create the local account, display the signed-in account and associate email data with the correct user. The People API is used for account linking, not contact discovery.</td>
+                </tr>
+                <tr>
+                  <td><code>gmail.modify</code></td>
+                  <td>Email messages and metadata, including headers, body content, labels, threads, drafts and attachment information returned by the Gmail API.</td>
+                  <td>To read and classify mail, apply labels and run rules. The scope permits modification; sending, deletion and bulk cleanup are documented as disabled.</td>
+                </tr>
+                <tr>
+                  <td><code>gmail.settings.basic</code></td>
+                  <td>Basic Gmail settings, including filters and labels.</td>
+                  <td>To support rule and filter management features in the app.</td>
+                </tr>
+                <tr>
+                  <td>OAuth credentials</td>
+                  <td>Access and refresh tokens issued by Google for the connected account.</td>
+                  <td>To maintain the connection and make authorised API calls. Tokens are stored by the self-hosted application and are not published on this website.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Email content can include personal information about other people, such as senders, recipients, names, addresses and details in message bodies or attachments. That information is handled in the same way as the operator’s own email data and may be processed by the providers described below.</p>
+
+          <h3>What the documentation says this deployment does not enable</h3>
+          <ul>
+            <li>Sending email through the app.</li>
+            <li>Deleting or trashing messages, or running the bulk cleaner.</li>
+            <li>Automatic draft creation.</li>
+            <li>Outbound webhook actions from rules.</li>
+            <li>Google Drive or OneDrive access for smart filing. No Drive or OneDrive scopes are documented for this deployment.</li>
+            <li>Calendar, Drive, Contacts or other Google services beyond the scopes listed above.</li>
+          </ul>
+          <p>These statements come from the deployment documentation. The underlying software supports more features than this deployment is documented as enabling.</p>
+        </section>
+
+        <section class="policy-section" id="use">
+          <h2>4. How we use data</h2>
+          <p>We use the data described in this policy to:</p>
+          <ul>
+            <li>Authenticate the operator and link a Gmail account to the deployment.</li>
+            <li>Read and display email, threads, labels and related metadata in the local interface.</li>
+            <li>Classify messages and help organise them with AI-assisted rules and labels.</li>
+            <li>Apply labels and rule outcomes through the Gmail API.</li>
+            <li>Maintain the local database, queues and application state.</li>
+            <li>Operate, troubleshoot, secure and maintain the deployment.</li>
+            <li>Respond to requests about access, correction or deletion.</li>
+            <li>Comply with applicable law.</li>
+          </ul>
+          <p>We do not use Google user data for advertising, retargeting, profiling, creditworthiness or lending decisions. We do not sell it, rent it or provide it to data brokers. We do not use it to train machine-learning models. These are intended commitments and require verification.</p>
+        </section>
+
+        <section class="policy-section" id="ai">
+          <h2>5. AI providers and third parties</h2>
+          <p>Inbox Zero uses language models to classify email and support organisation. The following providers may process email content, metadata and prompts:</p>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Provider</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Data that may be processed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Anthropic</strong></td>
+                  <td>Primary language-model provider. Processes messages, including sender, recipient, subject, date and textual content, for classification and organisation.</td>
+                  <td>Email content selected for analysis, message metadata, prompts and the model’s output.</td>
+                </tr>
+                <tr>
+                  <td><strong>Groq (possible fallback)</strong></td>
+                  <td>Named in the deployment documentation as a fallback. Whether it is active is not stated here.</td>
+                  <td>Email content selected for analysis, message metadata, prompts and model output, if enabled. Whether it is active is not stated here.</td>
+                </tr>
+                <tr>
+                  <td><strong>Google</strong></td>
+                  <td>Gmail and profile APIs.</td>
+                  <td>Email, label, settings and profile data accessed through the authorised scopes.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>The deployment documentation sets a default to redact sensitive data before email content is sent to a language model. Redaction reduces risk, but it is not a guarantee that every piece of sensitive information will be removed. General personal data is not necessarily masked; only certain credentials, tokens and payment-card patterns are redacted by default, and the redaction policy can be changed per account. Attachments are not sent in the standard operation identified. This is not complete anonymisation. Do not connect an inbox containing information you are not prepared to have processed by these providers.</p>
+          <p>The intended commitments are not to sell Google user data or use it for advertising. The AI providers are documented as processing data to provide the requested features; their roles, retention and model-training practices require separate review. Their handling is governed by their own terms and privacy policies:</p>
+          <ul>
+            <li><a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic Privacy Policy</a></li>
+            <li><a href="https://groq.com/privacy-policy/" rel="noopener">Groq Privacy Policy</a></li>
+            <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+          </ul>
+          <p>These providers may process data outside Australia. Their processing locations, retention practices and training practices are not documented here, and we cannot promise that their handling matches ours.</p>
+        </section>
+
+        <section class="policy-section" id="storage">
+          <h2>6. Storage, security and retention</h2>
+          <h3>Where data is stored</h3>
+          <p>According to the deployment documentation, the service runs on private infrastructure. Email content, metadata, labels, rules, account settings and OAuth credentials are stored in a dedicated PostgreSQL database. Redis is described as supporting queues, caching and short-lived state. Metadata, rule results, summaries, chat history and other derived data may be stored. The full mailbox body is not mirrored in the main messages table; message bodies are fetched on demand. Derived data may contain parts of message content.</p>
+          <p>The documentation states that OAuth tokens are encrypted with AES-256-GCM. It also states that the application binds to the local host, the database and Redis do not publish host ports, containers run on a dedicated bridge network, and remote access uses an SSH tunnel. Encryption of other stored data has not been proven; full database encryption is not claimed.</p>
+          <p>Container logs are described as size-limited and rotated. The deployment documentation describes a private access path; whether any endpoint is reachable from outside the private environment is not documented.</p>
+
+          <h3>Retention</h3>
+          <ul>
+            <li><strong>Email data</strong> is described as retained in the local database for as long as the Gmail account remains connected, and afterwards until the operator deletes it or removes the deployment data.</li>
+            <li><strong>AI reasoning fields</strong> are configured to be redacted after 30 days, but the corresponding routine is not currently scheduled. No automatic deletion at that interval is promised.</li>
+            <li><strong>Captured sent-draft text</strong> is configured to be redacted after 7 days, but the corresponding routine is not currently scheduled. No automatic deletion at that interval is promised.</li>
+            <li><strong>Redis data</strong> is described as used for queues, caching and short-lived state, not as the primary store for email content.</li>
+            <li><strong>Container logs</strong> are rotated by size, configured for up to three files of 10 MB per service.</li>
+            <li><strong>Backups</strong> may contain copies of the database and configuration. They are manual and have no proven automatic expiration. Their existence, retention, encryption and deletion process are not documented here.</li>
+            <li><strong>No general automatic expiration</strong> of metadata is described. Do not promise automatic deletion of metadata or derived data.</li>
+          </ul>
+          <p>Retention settings are part of the deployment configuration and may change. Disconnecting an account is described as stopping future access; whether stored data is erased automatically is not documented. To request deletion, contact beto.com2@gmail.com. We may need to verify your identity.</p>
+
+          <h3>Who can access stored data</h3>
+          <p>Because this Inbox Zero deployment is privately operated, the operator may access stored email data, logs and backups when necessary to operate, maintain, troubleshoot or secure the service, to respond to a request, or to comply with the law. Access is limited to what is necessary for those purposes. We do not permit anyone else to read Google user data except with affirmative consent, for security, or as required by law.</p>
+
+          <h3>Security</h3>
+          <p>The deployment documentation describes local-only binds, isolated container networks, private credentials, restricted file permissions and restricted remote access. OAuth tokens are encrypted with AES-256-GCM. Encryption of other stored data has not been proven; full database encryption is not claimed. Operational records are partitioned by Gmail account. PostHog, Sentry, Axiom, Tinybird and similar integrations are identified as disabled. Revocation is available through the Google Account. An account and data deletion mechanism exists in the application. Immediate deletion of backups or third-party copies is not promised. No method of storage or transmission is completely secure, and we cannot guarantee absolute security.</p>
+        </section>
+
+        <section class="policy-section" id="sharing">
+          <h2>7. Sharing and disclosure</h2>
+          <p>We share data only as described in this policy:</p>
+          <ul>
+            <li><strong>Service providers:</strong> Anthropic and Groq are documented as processing email content for AI-assisted features. Which providers are active and their terms require separate review. Google provides the Gmail and profile APIs used by the app.</li>
+            <li><strong>Infrastructure:</strong> the private hosting environment used to run Inbox Zero, limited to what is necessary to operate the service.</li>
+            <li><strong>Security and abuse:</strong> where necessary to investigate a security incident, a bug or misuse.</li>
+            <li><strong>Legal requirements:</strong> where required by applicable law, regulation or a valid legal process.</li>
+            <li><strong>With consent:</strong> where you have given explicit consent to a specific disclosure.</li>
+          </ul>
+          <p>We do not sell Google user data. We do not transfer it to advertising platforms, data brokers or information resellers. We do not use it to determine creditworthiness or for lending purposes. We do not allow humans to read Google user data except as described in the Limited Use section below.</p>
+          <p>This deployment is independent of the upstream Inbox Zero project, which does not operate it or provide support for it.</p>
+        </section>
+
+        <section class="policy-section" id="limited-use">
+          <h2>8. Google API Services User Data Policy and Limited Use</h2>
+          <div class="callout">
+            <span class="callout__label">Limited Use statement</span>
+            <p>Inbox Zero’s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+          </div>
+          <p>In line with those requirements:</p>
+          <ul>
+            <li>We limit our use of Google user data to providing and improving user-facing features that are prominent in the Inbox Zero interface — primarily email organisation, labels and rules.</li>
+            <li>We do not transfer Google user data to third parties except to provide or improve those features, for security purposes, to comply with applicable law, or with the user’s explicit consent.</li>
+            <li>We do not allow humans to read Google user data unless the user has given affirmative agreement to view specific data, or the access is necessary for security, legal compliance, or aggregated internal operations.</li>
+            <li>We do not sell Google user data or use it for advertising, including retargeting, personalised advertising or interest-based advertising.</li>
+            <li>We do not use Google user data to determine creditworthiness or for lending purposes.</li>
+          </ul>
+          <p>This statement describes this deployment’s intended commitments. It is not a representation that Google has reviewed, approved or certified this deployment. Compliance with the Limited Use requirements has not been independently verified.</p>
+        </section>
+
+        <section class="policy-section" id="rights">
+          <h2>9. Your choices and rights</h2>
+          <p>Subject to applicable law, you may ask us to:</p>
+          <ul>
+            <li>Provide access to personal information we hold about you.</li>
+            <li>Correct information that is inaccurate or out of date.</li>
+            <li>Delete information we control, subject to lawful retention requirements.</li>
+            <li>Withdraw consent for future processing.</li>
+            <li>Explain how your information has been handled.</li>
+          </ul>
+          <p>To make a request, email <a href="mailto:beto.com2@gmail.com">beto.com2@gmail.com</a>. We may need to verify your identity before acting on a request. The response process and timeframe are not documented. There is no self-service deletion through WhatsApp; deletion is administrative. The operator may refuse or delay deletion where required for security or legal reasons, but will not promise immediate or complete deletion of tasks, logs or backups.</p>
+          <p>You can revoke Google access at any time from the <a href="https://myaccount.google.com/permissions" rel="noopener">Google Account permissions page</a>. You can also disconnect an account in the Inbox Zero interface. Revoking access stops future API calls; it does not automatically delete data already stored in the local database or backups. Contact us to request deletion.</p>
+          <p>If you are in Australia and are not satisfied with our response, you may be able to raise a concern with the <a href="https://www.oaic.gov.au" rel="noopener">Office of the Australian Information Commissioner</a>. Nothing in this policy limits rights you have under applicable law.</p>
+        </section>
+
+        <section class="policy-section" id="children">
+          <h2>10. Children</h2>
+          <p>This deployment is private and is not offered to the public. It is not directed to children under 13, and we do not knowingly collect personal information from children for a public service.</p>
+        </section>
+
+        <section class="policy-section" id="changes">
+          <h2>11. Changes to this policy</h2>
+          <p>We may update this policy when the deployment changes or when the law or provider practices require it. The “Last updated” date at the top of this page will change, and the previous version will be replaced on this site.</p>
+          <p>If a change involves a new use of Google user data, we will update this policy and, where required, ask the relevant users to consent before the new use begins. We will not use Google user data for a purpose that is not disclosed here.</p>
+        </section>
+
+        <section class="policy-section" id="contact">
+          <h2>12. Contact</h2>
+          <p>Questions, access requests and deletion requests can be sent to:</p>
+          <div class="policy-contact">
+            <p><strong>Email:</strong> <a href="mailto:beto.com2@gmail.com">beto.com2@gmail.com</a></p>
+            <p><strong>Website:</strong> <a href="https://homelab.wmuritiba.com/inbox-zero/">homelab.wmuritiba.com/inbox-zero</a></p>
+            <p>Please include “Inbox Zero privacy” in the subject line so the request is routed correctly.</p>
+          </div>
+        </section>
+
+        <nav class="policy-footer-nav" aria-label="Inbox Zero documents">
+          <a href="../">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            Inbox Zero overview
+          </a>
+          <a href="../terms/">Terms of service
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </nav>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../../" aria-label="Muritiba Homelab — home">
+          <img class="brand-mark" src="../../assets/mark.svg" alt="" width="34" height="34">
+          <span class="brand-text">Muritiba <span>Homelab</span></span>
+        </a>
+        <p>A private, self-hosted homelab in New South Wales. Built for learning, useful automation and careful data handling.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Inbox Zero</h3>
+        <a href="../">Overview</a>
+        <a href="./">Privacy policy</a>
+        <a href="../terms/">Terms of service</a>
+        <a href="../../marvin/">Marvin</a>
+      </div>
+      <div class="footer-col">
+        <h3>Site</h3>
+        <a href="../../projects/">All projects</a>
+        <a href="../../about/">About</a>
+        <a href="../../#approach">Approach</a>
+        <a href="../../#contact">Contact</a>
+        <a href="https://github.com/wmuritiba" rel="noopener">GitHub profile</a>
+        <a href="https://github.com/wmuritiba/homelab-website" rel="noopener">Source code</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Muritiba Homelab. Operated privately in New South Wales, Australia.</p>
+      <p>This website: no cookies, no analytics, no third-party scripts. Application policies are separate.</p>
+    </div>
+  </footer>
+</body>
+</html>
