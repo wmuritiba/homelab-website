@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Marvin — Private WhatsApp assistant | Muritiba Homelab</title>
+  <meta name="description" content="Marvin is a private WhatsApp assistant for family schedules. It currently consults Google Calendar events; creating events through WhatsApp is planned. Scopes and provider configuration are documented but unverified.">
+  <link rel="canonical" href="https://homelab.wmuritiba.com/marvin/">
+  <meta name="theme-color" content="#06090f">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Muritiba Homelab">
+  <meta property="og:title" content="Marvin — Private WhatsApp assistant">
+  <meta property="og:description" content="A private, self-hosted WhatsApp assistant for family schedules. The Google Calendar scope is pending confirmation.">
+  <meta property="og:url" content="https://homelab.wmuritiba.com/marvin/">
+  <meta property="og:image" content="https://homelab.wmuritiba.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_AU">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Muritiba Homelab — home">
+        <img class="brand-mark" src="../assets/mark.svg" alt="" width="34" height="34">
+        <span class="brand-text">Muritiba <span>Homelab</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="../projects/">Projects</a>
+        <a href="../about/">About</a>
+        <a href="../marvin/" aria-current="page">Marvin</a>
+        <a href="../inbox-zero/">Inbox Zero</a>
+        <span class="link-subtle">Privacy policy and terms are being finalised.</span>
+              <span class="link-subtle">Privacy policy and terms are being finalised.</span>
+        <a href="../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Marvin</span>
+        </nav>
+
+        <div class="app-hero">
+          <div>
+            <p class="eyebrow">Project 01 · Private assistant</p>
+            <div class="app-hero__title">
+              <span class="app-icon" aria-hidden="true">
+                <img src="../assets/marvin.svg" alt="" width="32" height="32">
+              </span>
+              <h1>Marvin</h1>
+            </div>
+            <p class="app-hero__tagline">A private WhatsApp assistant for everyday family logistics — schedules, reminders and quick questions. It currently consults Google Calendar events; creating events through WhatsApp is planned.</p>
+            <div class="app-hero__badges">
+              <span class="pill pill--accent">Access pending</span>
+              <span class="pill">WhatsApp</span>
+              <span class="pill">Google Calendar · current + planned write</span>
+              <span class="pill">Self-hosted</span>
+            </div>
+            <p class="draft-note"><strong>Status:</strong> Privacy policy and terms are being finalised.</p>
+          </div>
+
+          <aside class="app-hero__side" aria-label="Marvin at a glance">
+            <div class="meta-card"><span>Status</span><strong>Private (pending)</strong></div>
+            <div class="meta-card"><span>Google data</span><strong>Calendar, scope broader than current use</strong></div>
+            <div class="meta-card"><span>AI processing</span><strong>Anthropic · Groq (pending)</strong></div>
+            <div class="meta-card"><span>Public access</span><strong>Not published</strong></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="what-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <p class="eyebrow">What it does</p>
+            <h2 id="what-title">A familiar interface, a narrow backend.</h2>
+          </div>
+          <div class="section-head__aside">
+            <p class="lead">Marvin lives in WhatsApp. Behind that simple interface, the work is deliberately split into small, auditable steps.</p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M8 9h8M8 13h5"/></svg>
+            </span>
+            <h3>Answers in WhatsApp</h3>
+            <p>Family members send a message as they normally would. Marvin replies in the same conversation, using a private WhatsApp bridge rather than a public web app.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M8 14h2M14 14h2M8 17h2"/></svg>
+            </span>
+            <h3>Consults calendar events</h3>
+            <p>When a question is about the schedule, Marvin can read the connected Google Calendars and turn the result into a short answer. The production workflow currently queries events. Creating, changing and cancelling events through natural-language WhatsApp commands is planned for a future stage.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>
+            </span>
+            <h3>Handles text and voice</h3>
+            <p>Voice notes are transcribed so they can be treated like typed messages. The documentation states that the transcription service handles audio in memory; this requires confirmation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="data-title">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Google data</p>
+          <h2 id="data-title">Google Calendar access, current and planned.</h2>
+          <p class="lead">Marvin currently uses Google Calendar to help answer scheduling questions. The production workflow only queries events. The standard OAuth credential requests broader calendar permissions, including write access. Creating, changing and cancelling events through WhatsApp is planned and will require appropriate authorisation. The exact granted scopes must be confirmed.</p>
+          <p class="muted">The privacy policy is a draft. It describes the intended data, purpose, storage, processors and deletion route; each item must be verified before publication.</p>
+          <div class="button-row">
+            <span class="link-subtle">Privacy policy and terms are being finalised.</span>
+          </div>
+        </div>
+
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg>
+            <div><strong>Calendar events (current query; future write planned)</strong>Event titles, times, locations, descriptions and other details returned by the Google Calendar API. The production workflow currently queries events; future create, update and cancel operations are planned and will require authorisation.</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg>
+            <div><strong>No Gmail access in the documented configuration</strong>The documentation does not include Gmail scopes or email actions. This must be confirmed against the live credential and Cloud project.</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg>
+            <div><strong>Current operations: query events only; future create/update/cancel planned</strong>The standard OAuth credential requests broader calendar permissions, including write access. The granted scopes and write behaviour must be confirmed before publication.</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg>
+            <div><strong>Credential storage (pending)</strong>The deployment documentation places OAuth credentials in the self-hosted automation platform’s credential store, protected by its master key. This must be verified. Credentials are not published in this repository.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="flow-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <p class="eyebrow">Request flow</p>
+            <h2 id="flow-title">From message to reply.</h2>
+          </div>
+          <div class="section-head__aside">
+            <p class="lead">A high-level view of the path a message takes. The production system uses a self-hosted WhatsApp bridge and an automation workflow.</p>
+          </div>
+        </div>
+
+        <ol class="principle-list">
+          <li class="principle">
+            <span class="principle__num">01</span>
+            <div>
+              <h3>Message received</h3>
+              <p>A family member sends a text message or voice note to the private WhatsApp number. The WhatsApp bridge passes it to the self-hosted automation layer.</p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="principle__num">02</span>
+            <div>
+              <h3>Intent and context</h3>
+              <p>The workflow classifies the request. Schedule questions take a deterministic calendar path; general questions go to the language model with the conversation context.</p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="principle__num">03</span>
+            <div>
+              <h3>Scoped lookup</h3>
+              <p>For calendar questions, the workflow currently queries the connected calendars for the information needed to answer. Creating, changing or cancelling events is planned for a future stage and is not implemented.</p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="principle__num">04</span>
+            <div>
+              <h3>AI processing</h3>
+              <p>Anthropic’s Claude models are documented as generating the reply, and Groq as transcribing voice notes. A local Ollama fallback is mentioned in the project documentation but is not assumed here. Confirm the active provider configuration.</p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="principle__num">05</span>
+            <div>
+              <h3>Reply and history</h3>
+              <p>The reply is sent back through WhatsApp. The project documentation describes conversation history stored in a self-hosted SQLite database; this and its retention need confirmation.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="providers-title">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Processors</p>
+            <h2 id="providers-title">External AI, named clearly.</h2>
+            <p class="lead">Marvin is self-hosted, but it is not self-contained. Message text and, for voice notes, transcribed text are sent to external providers to generate a response.</p>
+            <p class="muted">The privacy policy identifies each provider and links to its own privacy documentation. The claims that Google user data is not sold, used for advertising or used to train models by this deployment are intended commitments that still require verification.</p>
+          </div>
+
+          <div class="cap-grid">
+            <article class="cap-card">
+              <span class="cap-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M4.2 7.5l3.5 2M16.3 14.5l3.5 2M4.2 16.5l3.5-2M16.3 9.5l3.5-2"/><circle cx="12" cy="12" r="4"/></svg>
+              </span>
+              <h3>Anthropic</h3>
+              <p>Claude models interpret the request and compose the reply. Anthropic’s data handling, retention and model-training practices require separate confirmation.</p>
+            </article>
+            <article class="cap-card">
+              <span class="cap-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg>
+              </span>
+              <h3>Groq</h3>
+              <p>Speech-to-text for voice notes is documented for Groq. Groq’s retention and training practices, and whether it is the active provider, require confirmation.</p>
+            </article>
+            <article class="cap-card">
+              <span class="cap-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              </span>
+              <h3>Provider terms</h3>
+              <p>Data retention and model-training practices must be checked separately for each provider. A local fallback is mentioned in the documentation but is not assumed.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="access-title">
+      <div class="container">
+        <div class="oauth-panel">
+          <div>
+            <p class="eyebrow eyebrow--muted">Access &amp; privacy</p>
+            <h2 id="access-title">Private by default.</h2>
+            <p>Marvin is not published from this site. The deployment documentation describes access as limited to the operator and configured family members; the access model and whether any application endpoint is reachable still need confirmation.</p>
+            <p><strong>Google API Services User Data Policy:</strong> Marvin’s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. This is a draft commitment; compliance has not been independently verified.</p>
+          </div>
+          <div>
+            <div class="callout">
+              <span class="callout__label">Read next</span>
+              <p>The draft privacy policy is intended to explain the Google Calendar data Marvin accesses, how it is stored, which providers process it, how long it is retained and how to request deletion. Each statement requires verification.</p>
+            </div>
+            <div class="button-row button-row--compact">
+              <span class="link-subtle">Privacy policy and terms are being finalised.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../" aria-label="Muritiba Homelab — home">
+          <img class="brand-mark" src="../assets/mark.svg" alt="" width="34" height="34">
+          <span class="brand-text">Muritiba <span>Homelab</span></span>
+        </a>
+        <p>A private, self-hosted homelab in New South Wales. Built for learning, useful automation and careful data handling.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Marvin</h3>
+        <a href="./">Overview</a>
+        <a href="../inbox-zero/">Inbox Zero</a>
+        <span class="link-subtle">Privacy policy and terms are being finalised.</span>
+              <span class="link-subtle">Privacy policy and terms are being finalised.</span>
+      </div>
+      <div class="footer-col">
+        <h3>Site</h3>
+        <a href="../projects/">All projects</a>
+        <a href="../about/">About</a>
+        <a href="../#approach">Approach</a>
+        <a href="../#contact">Contact</a>
+        <a href="https://github.com/wmuritiba" rel="noopener">GitHub profile</a>
+        <a href="https://github.com/wmuritiba/homelab-website" rel="noopener">Source code</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Muritiba Homelab. Operated privately in New South Wales, Australia.</p>
+      <p>This website: no cookies, no analytics, no third-party scripts. Application policies are separate.</p>
+    </div>
+  </footer>
+</body>
+</html>

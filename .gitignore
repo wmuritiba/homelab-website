@@ -34,7 +34,8 @@ __pycache__/
 # Local preview helpers
 _site/
 
-# Provisional publication (W4A): only /docs and .gitignore are published.
+# Legal review notes (not for publication)
+homelab-legal-review.txt
 # Remove or relax these rules only when the definitive website is approved.
 /assets/
 /about/
